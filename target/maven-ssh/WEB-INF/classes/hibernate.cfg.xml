@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mysql://localhost:3306/chen</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <!--配置数据库方言，Hibernate可针对特殊的数据库进行优化-->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+    <!--是否把Hibernate运行时的SQL语句输出到控制台,项目编码期间设置为true便于测试，
+    项目部署完毕设置为false加快程序运行-->
+    <property name="show_sql">true</property>
+    <!--是否优化在日志和控制台输出的SQL语句，如果设置为true,在Hibernate运行输出到
+    控制台的SQL语句排版清晰，更便于阅读-->
+    <property name="format_sql">true</property>
+    <!---->
+    <property name="hbm2ddl.auto">update</property>
+    <mapping class="com.test.entity.UserEntity"/>
+  </session-factory>
+</hibernate-configuration>
